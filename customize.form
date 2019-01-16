@@ -1,0 +1,16 @@
+$type: form
+properties:
+  accounts:
+    type: string
+    title: Source accounts
+    hint: Comma-separated list of accounts e.g 'Cisco,ciscoDC'
+    name: accounts
+    required: !!bool true
+  hashtags:
+    type: string
+    title: Source hashtags
+    hint: Comma-separated list of hashtags e.g. 'WeAreCisco,BeTheBridge'
+    name: hashtags
+    required: !!bool true
+rules: []
+$meta: {}

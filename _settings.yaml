@@ -1,0 +1,64 @@
+contentType: Card
+title: Twitter Feed
+name: twitter-feed
+CollectionModeField: null
+MaxItemsField: null
+PriorityField: null
+StreamSource: null
+CardComponent: twitter-feed/twitter-feed-card
+StoreMetadataField: null
+CommonPart:
+  Owner: !!int 2
+  Container: null
+  CreatedUtc: 2019-01-03T16:46:48.1935068Z
+  PublishedUtc: 2019-01-03T16:46:48.2354619Z
+  ModifiedUtc: 2019-01-03T16:46:48.1935068Z
+  VersionCreatedUtc: 2019-01-03T16:46:48.0000000
+  VersionPublishedUtc: 2019-01-03T16:46:48.0000000
+  VersionModifiedUtc: 2019-01-03T16:46:48.0000000
+ServicePart:
+  ConnectorTypeId: !!int 0
+  ConnectorName: Script
+  ServiceName: Script
+  Url: ~/api/adenin.GateKeeper.Script
+  ServiceParameters: '{}'
+SearchContextPart:
+  Query: null
+  Interface: null
+CommandPart:
+  CommandType: None
+  Command: 
+  DefaultDate: null
+  Intent: null
+  Ext: {}
+AppPart:
+  App: null
+  Url: 
+  ExtUrl: 
+  Priority: !!int 0
+  AppFaceId: !!int 0
+  Category: orange
+  Icon: now:search
+  CSSClasses: null
+  Enabled: !!bool false
+  NewWindow: !!bool false
+  UrlWithId: !!bool true
+  AvailableAppFaceRecords: null
+  HasPattern: !!bool false
+RoleViewPermissionsPart:
+  AllowedRoles: []
+  Audiences:
+    - Authenticated
+  Mandatory: False
+RecurringTaskPart:
+  Schedule: '- - - - -'
+  ActivityType: adenin.Now.Activities.CardTask.UpdateCard
+  StartDateUtc: null
+  EndDateUtc: null
+  NextOccurrenceUtc: null
+  Priority: !!int 5
+  Status: Enabled
+  NowFlag: 0
+  LastExecutionUTC: null
+  EnableWebHook: !!bool false
+  WebHookToken: null

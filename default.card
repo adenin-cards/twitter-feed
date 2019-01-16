@@ -1,0 +1,166 @@
+$type: card
+rules: []
+properties:
+  title:
+    type: element
+    xtype: at-carbon-card-title
+    title: title
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+    customizable: !!bool true
+  vlist4:
+    type: element
+    xtype: at-core-vlist
+    itemComponent: twitter-feed/twitter-feed-item-card
+    listHeight: 300px
+    actionListeners:
+      - _all
+    listHeightExpanded: 600px
+  footer3:
+    type: element
+    title: '@Cisco'
+    xtype: at-carbon-card-footer
+    xgridcols: 12
+    expandable: !!bool true
+    href: https://twitter.com/Cisco
+$meta:
+  cardId: 54
+  preview-data: |-
+    {
+      "items": [
+        {
+          "user": {
+            "id": "1334301475",
+            "screenName": "Savitri4Ever",
+            "name": "Shivani Sahay",
+            "avatar": "https://pbs.twimg.com/profile_images/854388223161769984/GGR28l34_normal.jpg"
+          },
+          "id": "1070286150135238658",
+          "favourites": 0,
+          "retweets": 1,
+          "date": "2018-12-05T11:57:57.000Z",
+          "link": "https://twitter.com/statuses/1070286150135238658",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/bipchakr\" target=\"_blank\" rel=\"noopener noreferrer\">@bipchakr</a>: Giving back is part Cisco’s DNA <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Self4Society\" target=\"_blank\" rel=\"noopener noreferrer\">#Self4Society</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/WeAreCisco\" target=\"_blank\" rel=\"noopener noreferrer\">@WeAreCisco</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Volunteering\" target=\"_blank\" rel=\"noopener noreferrer\">#Volunteering</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/BeTheBridge\" target=\"_blank\" rel=\"noopener noreferrer\">#BeTheBridge</a>"
+        },
+        {
+          "user": {
+            "id": "18096846",
+            "screenName": "taniawright",
+            "name": "taniawright",
+            "avatar": "https://pbs.twimg.com/profile_images/723229863318966272/XLD4goGD_normal.jpg"
+          },
+          "id": "1070284456995414017",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2018-12-05T11:51:14.000Z",
+          "link": "https://twitter.com/statuses/1070284456995414017",
+          "text": "<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/GlobalCitizen\" target=\"_blank\" rel=\"noopener noreferrer\">#GlobalCitizen</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/BeTheBridge\" target=\"_blank\" rel=\"noopener noreferrer\">#BeTheBridge</a> So proud to be at Cisco!"
+        },
+        {
+          "user": {
+            "id": "3229625431",
+            "screenName": "ShannuKaw",
+            "name": "Shannu Kaw",
+            "avatar": "https://pbs.twimg.com/profile_images/604256015807160320/DUl_8TF9_normal.jpg"
+          },
+          "id": "1070284402029142016",
+          "favourites": 0,
+          "retweets": 4,
+          "date": "2018-12-05T11:51:01.000Z",
+          "link": "https://twitter.com/statuses/1070284402029142016",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/Gardesam9\" target=\"_blank\" rel=\"noopener noreferrer\">@Gardesam9</a>: Nearly 300 plus volunteers from 7 cities across Cisco india today spent time \"giving back\". Some touching and learning momen…"
+        },
+        {
+          "user": {
+            "id": "743061206093713408",
+            "screenName": "ScotMGardner",
+            "name": "Scot Gardner",
+            "avatar": "https://pbs.twimg.com/profile_images/745607767365386240/3314dEMF_normal.jpg"
+          },
+          "id": "1070283766302683139",
+          "favourites": 2,
+          "retweets": 0,
+          "date": "2018-12-05T11:48:29.000Z",
+          "link": "https://twitter.com/statuses/1070283766302683139",
+          "text": "I pledge to <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/BeTheBridge\" target=\"_blank\" rel=\"noopener noreferrer\">#BeTheBridge</a> for <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/TrussellTrust\" target=\"_blank\" rel=\"noopener noreferrer\">@TrussellTrust</a> in 2019 <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/WeAreCisco\" target=\"_blank\" rel=\"noopener noreferrer\">#WeAreCisco</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/IVD2018\" target=\"_blank\" rel=\"noopener noreferrer\">#IVD2018</a>"
+        },
+        {
+          "user": {
+            "id": "109475437",
+            "screenName": "VaibhavKrS",
+            "name": "Vaibhav K Srivastava",
+            "avatar": "https://pbs.twimg.com/profile_images/474839970868256769/qEGlF1eH_normal.jpeg"
+          },
+          "id": "1070282901806333952",
+          "favourites": 0,
+          "retweets": 2,
+          "date": "2018-12-05T11:45:03.000Z",
+          "link": "https://twitter.com/statuses/1070282901806333952",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/Gardesam9\" target=\"_blank\" rel=\"noopener noreferrer\">@Gardesam9</a>: <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/akshayapatra\" target=\"_blank\" rel=\"noopener noreferrer\">@akshayapatra</a> ..what a wonderful idea to employ the mothers of the children they feed in the mid day meal scheme ! <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/bethebri\" target=\"_blank\" rel=\"noopener noreferrer\">#bethebri</a>…"
+        },
+        {
+          "user": {
+            "id": "3030737836",
+            "screenName": "seujorge38",
+            "name": "Seu Jorge",
+            "avatar": "https://pbs.twimg.com/profile_images/1022545925217177602/K_IK704h_normal.jpg"
+          },
+          "id": "1070282769421484033",
+          "favourites": 0,
+          "retweets": 2,
+          "date": "2018-12-05T11:44:31.000Z",
+          "link": "https://twitter.com/statuses/1070282769421484033",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/CiscoDoBrasil\" target=\"_blank\" rel=\"noopener noreferrer\">@CiscoDoBrasil</a>: As ideias e as tecnologias certas podem mudar o mundo para melhor. \n<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/BeTheBridge\" target=\"_blank\" rel=\"noopener noreferrer\">#BeTheBridge</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/sYP9u9s2gi\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/sYP9u9s2gi</a> ✨🌎 <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co\" target=\"_blank\" rel=\"noopener noreferrer\">t.co</a>…"
+        },
+        {
+          "user": {
+            "id": "70397879",
+            "screenName": "guzcateg",
+            "name": "Guillermo Uzcategui",
+            "avatar": "https://pbs.twimg.com/profile_images/1041762342621601797/3rKkLQEk_normal.jpg"
+          },
+          "id": "1070282252246933504",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2018-12-05T11:42:28.000Z",
+          "link": "https://twitter.com/statuses/1070282252246933504",
+          "text": "<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/CiscoNetAcad\" target=\"_blank\" rel=\"noopener noreferrer\">#CiscoNetAcad</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/BeTheBridge\" target=\"_blank\" rel=\"noopener noreferrer\">#BeTheBridge</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/GlobalCitizen\" target=\"_blank\" rel=\"noopener noreferrer\">#GlobalCitizen</a>"
+        },
+        {
+          "user": {
+            "id": "846351111502073856",
+            "screenName": "DianeDMA",
+            "name": "Diane",
+            "avatar": "https://pbs.twimg.com/profile_images/1039463807293292546/JWj4C4HN_normal.jpg"
+          },
+          "id": "1070282218138988544",
+          "favourites": 0,
+          "retweets": 1,
+          "date": "2018-12-05T11:42:20.000Z",
+          "link": "https://twitter.com/statuses/1070282218138988544",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/CiscoUKI\" target=\"_blank\" rel=\"noopener noreferrer\">@CiscoUKI</a>: News! 📣 \n\nWe've partnered with <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/TrussellTrust\" target=\"_blank\" rel=\"noopener noreferrer\">@TrussellTrust</a> to help bridge the poverty gap in the UK! Let's work to end hunger and social i…"
+        }
+      ],
+      "_action": "firstpage",
+      "_page": 1,
+      "_pageSize": 10,
+      "_settings": {}
+    }
+  preview-mode: live
+  preview-container: event
+  search-term: 
+  service-url: 
+  xclass: 
+  xstyle: 
+  code: |-
+    action.initialize = function(evt) {
+      //debugger;
+    }
+
+    action.select = function(evt) {
+      var win = window.open(evt.args.href, '_blank');
+      win.focus();
+    }

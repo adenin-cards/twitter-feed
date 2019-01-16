@@ -1,0 +1,76 @@
+$type: card
+properties:
+  view1:
+    type: element
+    title: View
+    xtype: at-core-view
+    view: |-
+      <div class="action">
+        <div class="layout-horizontal mx pbsm ptsm" href="{{ link }}" at-click-action="select" style="cursor:pointer;">
+        	<div class="layout-self-start">
+          	<iron-image preload class="avatar layout-self-start mr mtsm" src="{{ user.avatar }}"></iron-image>
+        	</div>
+          <div class="layout-flex text-primary">
+          	<div class="clamp">
+            	<span class="font-bold">{{ user.name }}</span>
+              <at-link class="blue" href="https://twitter.com/{{ user.screenName }}">@{{ user.screenName }}</at-link>
+              <at-carbon-moment class="text-secondary" datetime="{{ date }}" from-now auto-refresh no-suffix style="display:inline-block;"></at-carbon-moment>
+            </div>
+            <div class="grey font-caption" style="margin-top: 2px; margin-bottom: 2px;">
+            	{{ text }}
+            </div>
+            <div class="font-caption grey">
+            	<span class="font-bold">{{ favourites }}</span> Favorites  
+              <span class="font-bold">{{ retweets }}</span> Retweets
+        		</div>
+        		{% if thumbnail %}
+        			<iron-image class="list-image mtsm mbsm" sizing="cover" preload src="{{ thumbnail }}"></iron-image>
+        		{% endif %}
+          </div>
+        </div>
+      </div>
+
+      <style>
+      .list-image {
+        border-radius: 10px;
+        height: 200px;
+        width: 100%;
+        background-color: lightgray;
+      }
+
+      .action:hover {
+        background-color: #F5f5f5;
+      }
+
+      .clamp {
+      	white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .avatar {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+      }
+      </style>
+    modelRoot: state.model
+    actionListeners:
+      - _all
+$meta:
+  cardId: 
+  preview-mode: static
+  preview-container: item
+  search-term: 
+  service-url: 
+  preview-data: |-
+    {
+      "title": "abc"
+    }
+  xclass: 
+  xstyle: 
+  code: |-
+    action.initialize = function(evt) {
+      //debugger;
+    }
+rules: []
