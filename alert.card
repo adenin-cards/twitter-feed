@@ -1,0 +1,840 @@
+$type: card
+rules: []
+properties:
+  title:
+    type: element
+    xtype: at-carbon-card-title
+    title: title
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+    customizable: !!bool true
+  view4:
+    type: element
+    title: Liquid View 4
+    xtype: at-core-view
+    updateMode: 0
+    view: |-
+      {% for item in items | limit:6 %}
+
+      <div class="action {% if forloop.index > 3 %}expanded-only{%endif%}">
+        <div class="layout-horizontal mx pbsm ptsm" href="{{ item.link }}" at-click-action="select" style="cursor:pointer;">
+        	<div class="layout-self-start">
+          	<iron-image preload class="avatar layout-self-start mr mtsm" src="{{ item.user.avatar }}"></iron-image>
+        	</div>
+          <div class="layout-flex text-primary">
+          	<div class="clamp">
+            	<span class="font-bold">{{ item.user.name }}</span>
+              <at-link class="blue" href="https://twitter.com/{{ item.user.screenName }}">@{{ item.user.screenName }}</at-link>
+              <at-carbon-moment class="text-secondary" datetime="{{ item.date }}" from-now auto-refresh no-suffix style="display:inline-block;"></at-carbon-moment>
+            </div>
+            <div class="grey font-caption" style="margin-top: 2px; margin-bottom: 2px;">
+            	{{ item.text }}
+            </div>
+            <div class="font-caption grey">
+            	<span class="font-bold">{{ item.favourites }}</span> Favorites  
+              <span class="font-bold">{{ item.retweets }}</span> Retweets
+        		</div>
+        		{% if item.thumbnail %}
+        			<iron-image class="list-image mtsm mbsm" sizing="cover" preload src="{{ item.thumbnail }}"></iron-image>
+        		{% endif %}
+          </div>
+        </div>
+      </div>
+
+      <style>
+      .list-image {
+        border-radius: 10px;
+        height: 200px;
+        width: 100%;
+        background-color: lightgray;
+      }
+
+      .action:hover {
+        background-color: #F5f5f5;
+      }
+
+      .clamp {
+      	white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .avatar {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+      }
+      </style>
+
+      {% endfor %}
+    modelRoot: state.model
+  footer3:
+    type: element
+    title: '@adenin'
+    xtype: at-carbon-card-footer
+    xgridcols: 12
+    href: https://twitter.com/adenin
+    expandMode: 2
+    modelBind: expandable:items.length>5
+$meta:
+  cardId: -1
+  preview-data: |-
+    {
+      "items": [
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1106208869448077317",
+          "favourites": 1,
+          "retweets": 1,
+          "date": "2019-03-14T15:02:01.000Z",
+          "link": "https://twitter.com/statuses/1106208869448077317",
+          "text": "Europe's natural gas market is being reshaped by a number of factors, presenting challenges and opportunities for transmission operators: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/QcUMlaVCUc\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/QcUMlaVCUc</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1oLGprXcAUoxu4.jpg"
+        },
+        {
+          "user": {
+            "id": "906496438896603136",
+            "screenName": "KursatSihca",
+            "name": "Kürşat",
+            "avatar": "https://pbs.twimg.com/profile_images/1096511553346723840/Qp3V-kqx_normal.jpg"
+          },
+          "id": "1106192581107556352",
+          "favourites": 0,
+          "retweets": 2,
+          "date": "2019-03-14T13:57:18.000Z",
+          "link": "https://twitter.com/statuses/1106192581107556352",
+          "text": "RT <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/BiliminUcunda\" target=\"_blank\" rel=\"noopener noreferrer\">@BiliminUcunda</a>: Bilim insanları sentetik DNA oluşturdu <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/adenin\" target=\"_blank\" rel=\"noopener noreferrer\">#adenin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/dna\" target=\"_blank\" rel=\"noopener noreferrer\">#dna</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/DoğalDNA\" target=\"_blank\" rel=\"noopener noreferrer\">#DoğalDNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/guanin\" target=\"_blank\" rel=\"noopener noreferrer\">#guanin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Hachimoji\" target=\"_blank\" rel=\"noopener noreferrer\">#Hachimoji</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/RNA\" target=\"_blank\" rel=\"noopener noreferrer\">#RNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/SentetikDNA\" target=\"_blank\" rel=\"noopener noreferrer\">#SentetikDNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/sitozin\" target=\"_blank\" rel=\"noopener noreferrer\">#sitozin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/timin\" target=\"_blank\" rel=\"noopener noreferrer\">#timin</a> https…"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1106185209521860609",
+          "favourites": 2,
+          "retweets": 2,
+          "date": "2019-03-14T13:28:00.000Z",
+          "link": "https://twitter.com/statuses/1106185209521860609",
+          "text": "The journey to digitizing operations is more complicated than many leadership teams think."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1106179672281366528",
+          "favourites": 1,
+          "retweets": 0,
+          "date": "2019-03-14T13:06:00.000Z",
+          "link": "https://twitter.com/statuses/1106179672281366528",
+          "text": "How to apply the <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/NetPromoterSystem\" target=\"_blank\" rel=\"noopener noreferrer\">#NetPromoterSystem</a> to nonprofits:"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1106174639951233024",
+          "favourites": 6,
+          "retweets": 3,
+          "date": "2019-03-14T12:46:00.000Z",
+          "link": "https://twitter.com/statuses/1106174639951233024",
+          "text": "Over the past three decades, the development of strategy has shifted in three major ways:"
+        },
+        {
+          "user": {
+            "id": "956799437082374144",
+            "screenName": "BiliminUcunda",
+            "name": "Bilimin Ucunda",
+            "avatar": "https://pbs.twimg.com/profile_images/956800680769015808/2Lb-oY9Z_normal.jpg"
+          },
+          "id": "1106078226307342338",
+          "favourites": 3,
+          "retweets": 2,
+          "date": "2019-03-14T06:22:53.000Z",
+          "link": "https://twitter.com/statuses/1106078226307342338",
+          "text": "Bilim insanları sentetik DNA oluşturdu <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/adenin\" target=\"_blank\" rel=\"noopener noreferrer\">#adenin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/dna\" target=\"_blank\" rel=\"noopener noreferrer\">#dna</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/DoğalDNA\" target=\"_blank\" rel=\"noopener noreferrer\">#DoğalDNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/guanin\" target=\"_blank\" rel=\"noopener noreferrer\">#guanin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Hachimoji\" target=\"_blank\" rel=\"noopener noreferrer\">#Hachimoji</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/RNA\" target=\"_blank\" rel=\"noopener noreferrer\">#RNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/SentetikDNA\" target=\"_blank\" rel=\"noopener noreferrer\">#SentetikDNA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/sitozin\" target=\"_blank\" rel=\"noopener noreferrer\">#sitozin</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/timin\" target=\"_blank\" rel=\"noopener noreferrer\">#timin</a>"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1106043527866302464",
+          "favourites": 5,
+          "retweets": 4,
+          "date": "2019-03-14T04:05:00.000Z",
+          "link": "https://twitter.com/statuses/1106043527866302464",
+          "text": "A look at the five types of <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/cloud\" target=\"_blank\" rel=\"noopener noreferrer\">#cloud</a> customers, and the growth prospects for each. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/CZrKqJyYOH\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/CZrKqJyYOH</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1l0uiXWoAYl_nU.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105963498960551938",
+          "favourites": 5,
+          "retweets": 1,
+          "date": "2019-03-13T22:47:00.000Z",
+          "link": "https://twitter.com/statuses/1105963498960551938",
+          "text": "What should CEOs do when entering a business where the founder is still around? A checklist for setting a shared agenda:"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105940094475821056",
+          "favourites": 2,
+          "retweets": 0,
+          "date": "2019-03-13T21:14:00.000Z",
+          "link": "https://twitter.com/statuses/1105940094475821056",
+          "text": "Watch Bain Partner Lori Sherer's chat with Google Health VP Yoky Matsuoka on the opportunities to use <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/data\" target=\"_blank\" rel=\"noopener noreferrer\">#data</a> and <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/technology\" target=\"_blank\" rel=\"noopener noreferrer\">#technology</a> to improve <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/healthcare\" target=\"_blank\" rel=\"noopener noreferrer\">#healthcare</a>."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105934811649183752",
+          "favourites": 4,
+          "retweets": 0,
+          "date": "2019-03-13T20:53:01.000Z",
+          "link": "https://twitter.com/statuses/1105934811649183752",
+          "text": "Most of the growth in <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/cloud\" target=\"_blank\" rel=\"noopener noreferrer\">#cloud</a> adoption will come from buyers who have waded in to the market over the past three to five years. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/twh3R4ftgo\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/twh3R4ftgo</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1kR2aUWoAYgVbl.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105917195744350208",
+          "favourites": 5,
+          "retweets": 1,
+          "date": "2019-03-13T19:43:01.000Z",
+          "link": "https://twitter.com/statuses/1105917195744350208",
+          "text": "10 insights for the 2030 <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/energy\" target=\"_blank\" rel=\"noopener noreferrer\">#energy</a> landscape reinforce a theme of structural change. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/pv9aXYaVPy\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/pv9aXYaVPy</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1kB1CgWoAEnVKV.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105903883312873472",
+          "favourites": 3,
+          "retweets": 1,
+          "date": "2019-03-13T18:50:07.000Z",
+          "link": "https://twitter.com/statuses/1105903883312873472",
+          "text": "To fend off tech firms, banks can focus on the <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/ElementsOfValue\" target=\"_blank\" rel=\"noopener noreferrer\">#ElementsOfValue</a> that matter most to customers. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/rrz5AkXbA1\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/rrz5AkXbA1</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/infographic\" target=\"_blank\" rel=\"noopener noreferrer\">#infographic</a>",
+          "thumbnail": "https://pbs.twimg.com/tweet_video_thumb/D1j1sqbXgAERhTr.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105885237182164992",
+          "favourites": 13,
+          "retweets": 7,
+          "date": "2019-03-13T17:36:01.000Z",
+          "link": "https://twitter.com/statuses/1105885237182164992",
+          "text": "Eleven emerging markets will account for a significant share of the next billion users who will come online by 2021: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/jRoPNv1kxm\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/jRoPNv1kxm</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1jkwwwWoAQn1DR.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105872427270266880",
+          "favourites": 2,
+          "retweets": 0,
+          "date": "2019-03-13T16:45:07.000Z",
+          "link": "https://twitter.com/statuses/1105872427270266880",
+          "text": "Despite the strong pace of investment, <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PE\" target=\"_blank\" rel=\"noopener noreferrer\">#PE</a> dry powder has been on the rise. More from our new <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PrivateEquity\" target=\"_blank\" rel=\"noopener noreferrer\">#PrivateEquity</a> report: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/LuF4FQAakT\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/LuF4FQAakT</a>",
+          "thumbnail": "https://pbs.twimg.com/tweet_video_thumb/D1jZFrAX4AMwhZt.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105861581643091969",
+          "favourites": 2,
+          "retweets": 2,
+          "date": "2019-03-13T16:02:01.000Z",
+          "link": "https://twitter.com/statuses/1105861581643091969",
+          "text": "\"Slow and Steady\" cloud buyers—those who have only recently waded into the market—will become the largest cloud customer segment by 2022. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/BLupjSo36F\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/BLupjSo36F</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1jPP3IWoAAw6a4.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105859818974334979",
+          "favourites": 1,
+          "retweets": 3,
+          "date": "2019-03-13T15:55:01.000Z",
+          "link": "https://twitter.com/statuses/1105859818974334979",
+          "text": "Activist investors continue to push for more M&amp;A. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/BLdM8YWvFw\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/BLdM8YWvFw</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/MandA\" target=\"_blank\" rel=\"noopener noreferrer\">#MandA</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/mergers\" target=\"_blank\" rel=\"noopener noreferrer\">#mergers</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/deals\" target=\"_blank\" rel=\"noopener noreferrer\">#deals</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1jNpQFWwAAXLT8.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105854283617128448",
+          "favourites": 7,
+          "retweets": 8,
+          "date": "2019-03-13T15:33:01.000Z",
+          "link": "https://twitter.com/statuses/1105854283617128448",
+          "text": "These industrial applications of <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/IoT\" target=\"_blank\" rel=\"noopener noreferrer\">#IoT</a> technology are gaining the most traction: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/zGTr6DEfnP\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/zGTr6DEfnP</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1jInB3WoAEjUjm.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105837921591066631",
+          "favourites": 4,
+          "retweets": 4,
+          "date": "2019-03-13T14:28:00.000Z",
+          "link": "https://twitter.com/statuses/1105837921591066631",
+          "text": "How to structure and sequence a successful digital transformation."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105820558107820032",
+          "favourites": 3,
+          "retweets": 3,
+          "date": "2019-03-13T13:19:00.000Z",
+          "link": "https://twitter.com/statuses/1105820558107820032",
+          "text": "A look at the potential disruptions to the energy landscape by 2030. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/hnT1lD3W1t\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/hnT1lD3W1t</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/energy\" target=\"_blank\" rel=\"noopener noreferrer\">#energy</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/oil\" target=\"_blank\" rel=\"noopener noreferrer\">#oil</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/gas\" target=\"_blank\" rel=\"noopener noreferrer\">#gas</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1ip79wXQAA7fTq.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105805456545640448",
+          "favourites": 1,
+          "retweets": 1,
+          "date": "2019-03-13T12:19:00.000Z",
+          "link": "https://twitter.com/statuses/1105805456545640448",
+          "text": "A growing US labor shortage and digital disruption are prompting retailers to rethink their people strategy. Leading companies will ask six questions to get started:"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105585758717558785",
+          "favourites": 4,
+          "retweets": 1,
+          "date": "2019-03-12T21:46:00.000Z",
+          "link": "https://twitter.com/statuses/1105585758717558785",
+          "text": "Why do most change initiatives fail? Busting these three myths will increase the odds of success. "
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105569656830676992",
+          "favourites": 5,
+          "retweets": 6,
+          "date": "2019-03-12T20:42:01.000Z",
+          "link": "https://twitter.com/statuses/1105569656830676992",
+          "text": "Aldi continues to win over American shoppers. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/0CZdifn1dj\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/0CZdifn1dj</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1fFvkSWoAEAnuc.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105539206103879680",
+          "favourites": 10,
+          "retweets": 4,
+          "date": "2019-03-12T18:41:01.000Z",
+          "link": "https://twitter.com/statuses/1105539206103879680",
+          "text": "As retail ecosystems take different forms according to market characteristics, retailers face a host of decisions about how to participate: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/2uF4mZbiqr\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/2uF4mZbiqr</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1eqDJRXgAAnAkP.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105537188463366145",
+          "favourites": 7,
+          "retweets": 2,
+          "date": "2019-03-12T18:33:00.000Z",
+          "link": "https://twitter.com/statuses/1105537188463366145",
+          "text": "What does \"digital transformation\" really mean? It's about technology and people, innovation and disruption, offense and defense in equal measures."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105535678933274625",
+          "favourites": 1,
+          "retweets": 0,
+          "date": "2019-03-12T18:27:00.000Z",
+          "link": "https://twitter.com/statuses/1105535678933274625",
+          "text": "Successful <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/DigitalTransformation\" target=\"_blank\" rel=\"noopener noreferrer\">#DigitalTransformation</a> in <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Operations\" target=\"_blank\" rel=\"noopener noreferrer\">#Operations</a> starts by managing complexity and modernizing the manufacturing strategy."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105524863459098625",
+          "favourites": 1,
+          "retweets": 0,
+          "date": "2019-03-12T17:44:01.000Z",
+          "link": "https://twitter.com/statuses/1105524863459098625",
+          "text": "Bain’s Ouriel Lancry shares how <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/digital\" target=\"_blank\" rel=\"noopener noreferrer\">#digital</a> leaders repeatedly reinvent themselves to meet customer needs: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/YCsXOpeap0\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/YCsXOpeap0</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1edARSW0AILG3q.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105499693319114753",
+          "favourites": 4,
+          "retweets": 7,
+          "date": "2019-03-12T16:04:00.000Z",
+          "link": "https://twitter.com/statuses/1105499693319114753",
+          "text": "As tech firms march into financial services, the pressure is on banks to improve the <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/customerexperience\" target=\"_blank\" rel=\"noopener noreferrer\">#customerexperience</a> and earn loyalty."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105493402366414849",
+          "favourites": 4,
+          "retweets": 3,
+          "date": "2019-03-12T15:39:00.000Z",
+          "link": "https://twitter.com/statuses/1105493402366414849",
+          "text": "Cloud sales may be through the roof, but adoption rates vary widely. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/CZitZoeftF\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/CZitZoeftF</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1eAZBKXcAAaLw1.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105484595707953152",
+          "favourites": 1,
+          "retweets": 1,
+          "date": "2019-03-12T15:04:01.000Z",
+          "link": "https://twitter.com/statuses/1105484595707953152",
+          "text": "Even as automakers face an uncertain future, they can still make smart bets: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/2CGXajEju6\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/2CGXajEju6</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/infographic\" target=\"_blank\" rel=\"noopener noreferrer\">#infographic</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1d4YYmXcAEwF6S.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105469745753673733",
+          "favourites": 1,
+          "retweets": 0,
+          "date": "2019-03-12T14:05:00.000Z",
+          "link": "https://twitter.com/statuses/1105469745753673733",
+          "text": "Procurement offices calculate savings based on categories, but business unit leaders spend based on their budgets. The savings are lost in translation."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105463983677550595",
+          "favourites": 6,
+          "retweets": 5,
+          "date": "2019-03-12T13:42:06.000Z",
+          "link": "https://twitter.com/statuses/1105463983677550595",
+          "text": "Digital <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">#pricing</a> tools are getting better. But tools alone don't add value. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/X7Tdf9LDNz\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/X7Tdf9LDNz</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/infographic\" target=\"_blank\" rel=\"noopener noreferrer\">#infographic</a>",
+          "thumbnail": "https://pbs.twimg.com/ext_tw_video_thumb/1105463958528552960/pu/img/GSGoJe0cfL5JMk-5.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105450617898762240",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2019-03-12T12:49:00.000Z",
+          "link": "https://twitter.com/statuses/1105450617898762240",
+          "text": "As tech firms march into financial services, the pressure is on banks to improve the <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/customerexperience\" target=\"_blank\" rel=\"noopener noreferrer\">#customerexperience</a> and earn loyalty."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105434575558332416",
+          "favourites": 2,
+          "retweets": 0,
+          "date": "2019-03-12T11:45:15.000Z",
+          "link": "https://twitter.com/statuses/1105434575558332416",
+          "text": "Why modern crisis teams are turning from command-and-control systems to more adaptive, agile approaches: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/69daqLEwo9\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/69daqLEwo9</a>",
+          "thumbnail": "https://pbs.twimg.com/ext_tw_video_thumb/1105434516502601728/pu/img/xocLL33GTXZMWLks.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105289054051012608",
+          "favourites": 10,
+          "retweets": 8,
+          "date": "2019-03-12T02:07:00.000Z",
+          "link": "https://twitter.com/statuses/1105289054051012608",
+          "text": "Strategy is alive and well, but gradually shifting. CEOs can ask themselves six questions to determine if their strategy is up to speed:"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105221656300130304",
+          "favourites": 3,
+          "retweets": 1,
+          "date": "2019-03-11T21:39:11.000Z",
+          "link": "https://twitter.com/statuses/1105221656300130304",
+          "text": "<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PE\" target=\"_blank\" rel=\"noopener noreferrer\">#PE</a> Report: Debt multiples have entered territory not seen since the peak of the last investment cycle. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/DjrCJ4wBJH\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/DjrCJ4wBJH</a>",
+          "thumbnail": "https://pbs.twimg.com/ext_tw_video_thumb/1105221611786063872/pu/img/k8QwsvamMRZuOvMb.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105209532324741121",
+          "favourites": 5,
+          "retweets": 3,
+          "date": "2019-03-11T20:51:00.000Z",
+          "link": "https://twitter.com/statuses/1105209532324741121",
+          "text": "Telcos that embrace <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/SimpleAndDigital\" target=\"_blank\" rel=\"noopener noreferrer\">#SimpleAndDigital</a> processes outperform their peers in customer loyalty and both top- and bottom-line growth. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/hRH0qnOGAB\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/hRH0qnOGAB</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1Z-NlYX4AI77eg.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105195968994201600",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2019-03-11T19:57:07.000Z",
+          "link": "https://twitter.com/statuses/1105195968994201600",
+          "text": "<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PrivateEquity\" target=\"_blank\" rel=\"noopener noreferrer\">#PrivateEquity</a> Report: <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PE\" target=\"_blank\" rel=\"noopener noreferrer\">#PE</a> dry powder has been on the rise since 2012 and hit a record high of $2 trillion in December 2018. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/dtY9T1JK8y\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/dtY9T1JK8y</a>",
+          "thumbnail": "https://pbs.twimg.com/tweet_video_thumb/D1Zx2pyWoAMyKCV.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105193427539505152",
+          "favourites": 5,
+          "retweets": 4,
+          "date": "2019-03-11T19:47:01.000Z",
+          "link": "https://twitter.com/statuses/1105193427539505152",
+          "text": "In a recession, sales organizations can take several steps to gain market share, such as amplifying low-cost channels. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/JGenHBRTyE\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/JGenHBRTyE</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1ZvkMcWwAATIar.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105175057809195008",
+          "favourites": 3,
+          "retweets": 2,
+          "date": "2019-03-11T18:34:01.000Z",
+          "link": "https://twitter.com/statuses/1105175057809195008",
+          "text": "The next wave of Internet users will be very different from those in mature markets. This creates enormous opportunities and unique challenges for the companies looking to serve them: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/zHb0WXcqZF\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/zHb0WXcqZF</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1Ze22qW0AI3p_r.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105159956368687105",
+          "favourites": 3,
+          "retweets": 2,
+          "date": "2019-03-11T17:34:01.000Z",
+          "link": "https://twitter.com/statuses/1105159956368687105",
+          "text": "Utilities shouldn’t embark on a <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/DigitalTransformation\" target=\"_blank\" rel=\"noopener noreferrer\">#DigitalTransformation</a> journey alone. They can build an ecosystem of trusted partners. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/VIDmY3EdVV\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/VIDmY3EdVV</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1ZRH51X0AMRHkv.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105145364154408960",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2019-03-11T16:36:02.000Z",
+          "link": "https://twitter.com/statuses/1105145364154408960",
+          "text": "With a growing US labor shortage and lagging employee satisfaction, many retailers are rethinking their people strategy. Six questions to get started: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/RfcLCJdgpM\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/RfcLCJdgpM</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1ZD2g-XcAEj--c.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105124975323815937",
+          "favourites": 1,
+          "retweets": 2,
+          "date": "2019-03-11T15:15:01.000Z",
+          "link": "https://twitter.com/statuses/1105124975323815937",
+          "text": "India Philanthrophy Report: These 17 Sustainable Development Goals set measurable objectives across social, economic and environmental dimensions for 2030. <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/gdomQWjIY9\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/gdomQWjIY9</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1YxTwCWoAEmuAc.png"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105117171506647041",
+          "favourites": 2,
+          "retweets": 3,
+          "date": "2019-03-11T14:44:00.000Z",
+          "link": "https://twitter.com/statuses/1105117171506647041",
+          "text": "<a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/TV\" target=\"_blank\" rel=\"noopener noreferrer\">#TV</a> viewership may be facing headwinds, but brands still see these the <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/Oscars\" target=\"_blank\" rel=\"noopener noreferrer\">#Oscars</a> as a compelling opportunity to reach large and engaged audiences."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105108869854961666",
+          "favourites": 3,
+          "retweets": 0,
+          "date": "2019-03-11T14:11:01.000Z",
+          "link": "https://twitter.com/statuses/1105108869854961666",
+          "text": "How can insurers set themselves apart in an evolving market? Loyalty leaders strive to delight customers with digital experiences: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/Z7xruOS6GM\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/Z7xruOS6GM</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1YiqP4X4AAbs09.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105100565695131649",
+          "favourites": 7,
+          "retweets": 6,
+          "date": "2019-03-11T13:38:01.000Z",
+          "link": "https://twitter.com/statuses/1105100565695131649",
+          "text": "Inside the record run in <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PrivateEquity\" target=\"_blank\" rel=\"noopener noreferrer\">#PrivateEquity</a>, and what lies ahead: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/C59OyYR2bV\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/C59OyYR2bV</a> <a class=\"blue\" at-click-action=\"select\" href=\"https://twitter.com/hashtag/PE\" target=\"_blank\" rel=\"noopener noreferrer\">#PE</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1YbG4EXgAcJafS.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1105086973235134464",
+          "favourites": 0,
+          "retweets": 0,
+          "date": "2019-03-11T12:44:00.000Z",
+          "link": "https://twitter.com/statuses/1105086973235134464",
+          "text": "PODCAST: Nacho Deschamps of Scotiabank talks with Bain's Rob Markey about the bank's digital customer experience transformation. Part 1 of 2:"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1104816695531765767",
+          "favourites": 2,
+          "retweets": 0,
+          "date": "2019-03-10T18:50:01.000Z",
+          "link": "https://twitter.com/statuses/1104816695531765767",
+          "text": "Forward-thinking cities will envision future mobility patterns to capture the benefits of electrification: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/4zkyFWO8hG\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/4zkyFWO8hG</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1UY7cNXgAQtHti.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1104788253981507585",
+          "favourites": 8,
+          "retweets": 4,
+          "date": "2019-03-10T16:57:00.000Z",
+          "link": "https://twitter.com/statuses/1104788253981507585",
+          "text": "Over the last five years, there has been an explosion of creativity in how we think about strategy."
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1104408756513849344",
+          "favourites": 2,
+          "retweets": 1,
+          "date": "2019-03-09T15:49:01.000Z",
+          "link": "https://twitter.com/statuses/1104408756513849344",
+          "text": "How digital tools can increase the efficiency and effectiveness of procurement: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/3EvYU5lgKB\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/3EvYU5lgKB</a>",
+          "thumbnail": "https://pbs.twimg.com/media/D1Ol6UEX0AIG2_w.jpg"
+        },
+        {
+          "user": {
+            "id": "30872787",
+            "screenName": "BainInsights",
+            "name": "Bain Insights",
+            "avatar": "https://pbs.twimg.com/profile_images/1105545310477189126/TmUIliHZ_normal.png"
+          },
+          "id": "1104156180111339520",
+          "favourites": 7,
+          "retweets": 3,
+          "date": "2019-03-08T23:05:22.000Z",
+          "link": "https://twitter.com/statuses/1104156180111339520",
+          "text": "What does great marketing look like? To get results, leading CMOs focus less on algorithmic sophistication and more on orchestration: <a class=\"blue\" at-click-action=\"select\" href=\"https://t.co/Rr0cKfZl0j\" target=\"_blank\" rel=\"noopener noreferrer\">t.co/Rr0cKfZl0j</a>",
+          "thumbnail": "https://pbs.twimg.com/ext_tw_video_thumb/1104156095537467393/pu/img/8DiDCZChE4TiNcBr.jpg"
+        }
+      ],
+      "_action": "firstpage",
+      "_page": 1,
+      "_pageSize": 50,
+      "_maxId": "1104156180111339520",
+      "_settings": {}
+    }
+  preview-mode: live
+  preview-container: event
+  search-term: 
+  service-url: 
+  xclass: 
+  xstyle: 
+  code: |-
+    action.initialize = function(evt) {
+      //debugger;
+      //alert("twitter");
+    }
+
+    action.select = function(evt) {
+      var win = window.open(evt.args.href, '_blank');
+      win.focus();
+    }

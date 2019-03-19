@@ -5,7 +5,7 @@ CollectionModeField: null
 MaxItemsField: null
 PriorityField: null
 StreamSource: null
-CardComponent: twitter-feed/twitter-feed-card
+CardComponent: twitter-feed-card/twitter-feed-card-card
 StoreMetadataField: null
 CommonPart:
   Owner: !!int 2
@@ -17,11 +17,11 @@ CommonPart:
   VersionPublishedUtc: 2019-01-03T16:46:48.0000000
   VersionModifiedUtc: 2019-01-03T16:46:48.0000000
 ServicePart:
-  ConnectorTypeId: !!int 0
-  ConnectorName: Script
-  ServiceName: Script
-  Url: ~/api/adenin.GateKeeper.Script
-  ServiceParameters: '{}'
+  ConnectorTypeName: ScriptConnector
+  ConnectorTypeId: !!int 6
+  ConnectorName: twitter-connector
+  ServiceName: feed
+  Url: ~/api/adenin.GateKeeper.Connector/twitter-connector/feed
 SearchContextPart:
   Query: null
   Interface: null
