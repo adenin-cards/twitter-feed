@@ -1,6 +1,6 @@
 {
   "name": "twitter-feed",
-  "version": "0.0.1.56",
+  "version": "0.0.1.58",
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master"
