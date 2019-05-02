@@ -21,13 +21,13 @@ properties:
     listHeightExpanded: 600px
   footer3:
     type: element
-    title: '@Cisco'
+    title: Go to Twitter
     xtype: at-carbon-card-footer
     xgridcols: 12
     expandable: !!bool true
-    href: https://twitter.com/Cisco
+    href: https://twitter.com
 $meta:
-  cardId: 54
+  cardId: 7
   preview-data: |-
     {
       "items": [

@@ -5,7 +5,7 @@ CollectionModeField: null
 MaxItemsField: null
 PriorityField: null
 StreamSource: null
-CardComponent: twitter-feed-card/twitter-feed-card-card
+CardComponent: twitter-feed/twitter-feed-card
 StoreMetadataField: null
 CommonPart:
   Owner: !!int 2

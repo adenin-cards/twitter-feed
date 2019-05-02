@@ -73,10 +73,10 @@ properties:
     modelRoot: state.model
   footer3:
     type: element
-    title: '@adenin'
+    title: Go to Twitter
     xtype: at-carbon-card-footer
     xgridcols: 12
-    href: https://twitter.com/adenin
+    href: https://twitter.com
     expandMode: 2
     modelBind: expandable:items.length>5
 $meta:
